@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}flask page notfound{% endblock %}
+
+{% block page_content %}
+
+<p>local time {{ moment(current_time).format('LLL') }}.</p>
+<p>that's {{ moment(current_time).fromNow(refresh=True) }}</p>
+<div class="page-header">
+    <h1>hello,{% if name %}{{ name }}{% else %}stranger{% endif %}!</h1>
+    
+</div>
+{{ wtf.quick_form(form) }}
+
+{% endblock %}
